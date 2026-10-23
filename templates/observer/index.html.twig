@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Observer une requête HTTP</title>
+    </head>
+
+    <body>
+        <h1>La requête reçue par Symfony</h1>
+
+        <ul>
+            <li>Méthode : <code>{{ methode }}</code></li>
+            <li>Cible : <code>{{ cible }}</code></li>
+            <li>Accept : <code>{{ accept }}</code></li>
+            <li>Accept-Language : <code>{{ langues }}</code></li>
+            <li>Content-Type : <code>{{ typeContenu }}</code></li>
+            <li>Paramètre origine dans l'URL : <code>{{ origine }}</code></li>
+        </ul>
+
+        <h2>Corps de la requête reçue</h2>
+
+        {% if corps == '' %}
+            <p>Le corps est vide.</p>
+        {% else %}
+            <pre>{{ corps }}</pre>
+        {% endif %}
+
+        <h2>Envoyer un prénom dans le corps</h2>
+        <form
+            action="/observer?origine=formulaire"
+            method="post"
+            enctype="application/x-www-form-urlencoded"
+        >
+            <lable for="prenom">Prénom</label>
+                <input
+                    type="text"
+                    id="prenom"
+                    name="prenom"
+                    value="Olivier"
+                >
+                <button type="submit">Envoyer </button>
+        </form>
+
+        <p><a href="/">Retour à l'accueil</a></p>
+    </body>
+
+</html>
