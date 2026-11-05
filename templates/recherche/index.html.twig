@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechercher un cours</title>
+</head>
+<body>
+
+    <h1>Rechercher un cours</h1>
+
+    <form action="/rechercher" method="get">
+        <label for="recherche">Mot recherché</label>
+
+        <input
+            type="text"
+            id="recherche"
+            name="q"
+            value="{{ recherche }}">
+
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <h2>Résultats</h2>
+
+    {% if recherche != '' %}
+        <p>Recherche : {{ recherche }}</p>
+    {% endif %}
+
+    <ul>
+        {% for titre in resultats %}
+            <li>{{ titre }}</li>
+        {% else %}
+            <li>Aucun cours ne correspond à cette recherche</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="/">Retour à l'accueil</a></p>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Me présenter</title>
+    </head>
+    <body>
+
+        <h1>Me présenter</h1>
+
+        <form
+            action="/presentation/envoyer?origine=formulaire"
+            method="post"
+            enctype="application/x-www-form-urlencoded"
+        >
+            <p>
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </p>
+
+            <p>
+                <label for="ville">Ville</label>
+                <input type="text" id="ville" name="ville">
+            </p>
+
+            <p>
+                <label for="Objectif">Objectif</label>
+                <input type="text" id="objectif" name="objectif">
+            </p>
+
+            <p>
+                <button type="submit">Envoyer ma présentation</button>
+            </p>
+        </form>
+
+        <p>
+            <a href="/">Retour à l'accueil</a>
+        </p>
+
+    </body>
+</html>

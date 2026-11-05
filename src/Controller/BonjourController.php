@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class BonjourController extends AbstractController
 {
+    //afficher une page construire la route
     #[Route('/bonjour', name: 'app_bonjour', methods: ['GET'])]
     public function index(Request $request): Response
     {
